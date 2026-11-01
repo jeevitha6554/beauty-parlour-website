@@ -4,332 +4,348 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glowé | Beauty Studio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Glowé | Luxury Beauty Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{
- --pink:#ff6fae;
- --purple:#8861e9;
- --peach:#ffb18b;
- --lavender:#b9a1ff;
- --dark:#29213b;
- --muted:#777083;
- --white:#fff;
-}
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+:root{
+ --pink:#ff64a5;
+ --purple:#9061e9;
+ --peach:#ffad8c;
+ --dark:#30243d;
+ --muted:#766d7d;
+ --cream:#fff9fc;
+}
 body{
  font-family:'DM Sans',sans-serif;
+ background:var(--cream);
  color:var(--dark);
- background:#fff9fc;
  overflow-x:hidden;
 }
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer}
-.container{width:90%;max-width:1200px;margin:auto}
+.container{width:90%;max-width:1180px;margin:auto}
 
-/* ANIMATED BACKGROUND */
-
-.background-effects{
- position:fixed;
- inset:0;
- z-index:-2;
- overflow:hidden;
- pointer-events:none;
+/* BACKGROUND EFFECT */
+.bg-effects{
+ position:fixed;inset:0;overflow:hidden;
+ pointer-events:none;z-index:-1;
 }
-.blob{
- position:absolute;
- width:450px;
- height:450px;
- border-radius:50%;
- filter:blur(100px);
- opacity:.24;
- animation:float 12s infinite alternate ease-in-out;
+.orb{
+ position:absolute;border-radius:50%;
+ filter:blur(85px);opacity:.3;
+ animation:move 12s ease-in-out infinite alternate;
 }
-.blob.one{background:#ff80b5;top:-150px;left:-150px}
-.blob.two{background:#9c7aff;right:-180px;top:35%}
-.blob.three{background:#ffbc96;bottom:-200px;left:25%}
-@keyframes float{
+.orb1{width:400px;height:400px;background:#ff83bd;top:-140px;left:-150px}
+.orb2{width:430px;height:430px;background:#a58aff;top:35%;right:-180px;animation-delay:2s}
+.orb3{width:350px;height:350px;background:#ffbb9b;bottom:-150px;left:20%;animation-delay:4s}
+@keyframes move{
  from{transform:translate(0,0) scale(1)}
  to{transform:translate(100px,70px) scale(1.2)}
 }
 
 /* NAVBAR */
-
 header{
  position:sticky;top:0;z-index:100;
- background:#fff9fce8;
+ background:#fff9fceF;
  backdrop-filter:blur(18px);
- border-bottom:1px solid #f3e5ef;
+ border-bottom:1px solid #f3e4f0;
 }
 .nav{
  height:78px;display:flex;
  justify-content:space-between;align-items:center;
 }
-.logo{
- font:700 31px 'Playfair Display';
- letter-spacing:1px;
-}
+.logo{font:700 32px 'Playfair Display';letter-spacing:1px}
 .logo span{color:var(--pink)}
-.links{display:flex;gap:29px;align-items:center}
-.links a{font-size:12px;font-weight:700;letter-spacing:1px}
+.links{display:flex;align-items:center;gap:28px}
+.links a{font-size:12px;font-weight:800;letter-spacing:1px}
 .links a:hover{color:var(--purple)}
-.menu{display:none;border:0;background:none;font-size:26px}
-.nav-button{
+.nav-cta{
+ color:white!important;
+ padding:13px 23px;border-radius:30px;
  background:linear-gradient(100deg,var(--pink),var(--purple));
- color:white!important;padding:13px 23px;border-radius:30px;
 }
+.menu{display:none;border:0;background:none;font-size:27px}
 
 /* BUTTON */
-
-.primary{
- display:inline-block;
- border:0;
- color:white;
- background:linear-gradient(110deg,#ff67a7,#9463ed);
- padding:16px 28px;
- border-radius:35px;
- font-size:12px;
- font-weight:800;
- letter-spacing:1px;
- box-shadow:0 9px 25px #c47cc75c;
+.btn{
+ display:inline-block;padding:15px 27px;
+ border-radius:30px;color:white;
+ background:linear-gradient(100deg,var(--pink),var(--purple));
+ font-size:12px;font-weight:800;letter-spacing:1px;
+ border:0;box-shadow:0 8px 25px #b17bc65c;
  transition:.3s;
 }
-.primary:hover{transform:translateY(-5px);box-shadow:0 15px 30px #b37bcf70}
+.btn:hover{transform:translateY(-4px);box-shadow:0 15px 30px #a67bd277}
 
 /* HERO */
-
 .hero{
- min-height:670px;
- display:grid;
- grid-template-columns:1fr 1fr;
- align-items:center;
- gap:50px;
- padding:70px 0;
+ min-height:650px;padding:65px 0;
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:55px;align-items:center;
 }
 .tag{
- color:#a05dd0;
- font-size:11px;
- font-weight:800;
- letter-spacing:4px;
+ color:#a15dd0;font-size:11px;
+ letter-spacing:4px;font-weight:800;
 }
 .hero h1{
- font:600 clamp(48px,6vw,78px)/1.12 'Playfair Display';
+ font:600 clamp(45px,6vw,76px)/1.15 'Playfair Display';
  margin:23px 0;
 }
 .gradient-text{
- background:linear-gradient(100deg,#ff60a2,#9b61eb,#ff9c79);
+ background:linear-gradient(100deg,#ff65a5,#9160ec,#ff9b81);
  -webkit-background-clip:text;
  color:transparent;
 }
 .hero p{
- max-width:480px;
- color:var(--muted);
- font-size:15px;
- line-height:1.9;
+ font-size:15px;line-height:1.9;
+ color:var(--muted);max-width:470px;
  margin-bottom:30px;
 }
-.hero-image{
- height:510px;
- position:relative;
- border-radius:180px 180px 35px 35px;
- overflow:hidden;
- box-shadow:0 25px 65px #b77aa444;
+
+/* CSS PRODUCT DISPLAY - NO HUMAN PHOTOS */
+.product-scene{
+ min-height:475px;
+ border-radius:40px;
+ background:
+ radial-gradient(circle at 20% 20%,#fff 0 5%,transparent 30%),
+ linear-gradient(135deg,#fbcce2,#e3d5ff,#ffe0cc);
+ position:relative;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;
+ box-shadow:0 25px 60px #a879ba35;
 }
-.hero-image img{width:100%;height:100%;object-fit:cover}
-.hero-badge{
- position:absolute;bottom:22px;left:20px;
- background:#ffffffed;
- backdrop-filter:blur(15px);
- padding:18px 23px;border-radius:18px;
+.scene-circle{
+ position:absolute;width:320px;height:320px;
+ border-radius:50%;background:#ffffff65;
+}
+.product-table{
+ position:absolute;bottom:45px;width:85%;height:105px;
+ background:linear-gradient(140deg,#fff,#e8d8ed);
+ border-radius:20px;
+ box-shadow:0 20px 30px #8e5d8a35;
+}
+.bottle{
+ position:absolute;bottom:140px;
+ width:67px;height:145px;border-radius:14px 14px 10px 10px;
+ background:linear-gradient(90deg,#e9bbca,#fff0f4,#d99db6);
+ box-shadow:8px 8px 18px #895f8335;
+}
+.bottle:before{
+ content:"";position:absolute;width:27px;height:28px;
+ background:#c49b6d;top:-27px;left:20px;border-radius:5px 5px 0 0;
+}
+.bottle:after{
+ content:"GLOWÉ";position:absolute;top:60px;
+ left:8px;font-size:9px;letter-spacing:1px;
+ color:#99627e;font-weight:800;
+}
+.b1{left:25%;height:130px}
+.b2{
+ left:43%;width:85px;height:175px;
+ background:linear-gradient(90deg,#d3c1ee,#fff,#bda5df);
+}
+.b2:before{background:#b69a74}
+.jar{
+ position:absolute;bottom:140px;right:22%;
+ width:90px;height:65px;
+ background:linear-gradient(120deg,#fff,#f6d8e6);
+ border-radius:10px 10px 17px 17px;
+ box-shadow:8px 8px 18px #895f8335;
+}
+.jar:before{
+ content:"";position:absolute;top:-12px;left:-3px;
+ width:96px;height:14px;border-radius:5px;
+ background:linear-gradient(90deg,#d4b07e,#f8e0b0,#b68d55);
+}
+.jar:after{
+ content:"BEAUTY";position:absolute;top:27px;
+ left:19px;font-size:10px;color:#a76d91;
+ font-weight:800;
+}
+.vase{
+ position:absolute;bottom:140px;left:12%;
+ font-size:65px;
+}
+.scene-label{
+ position:absolute;top:25px;right:25px;
+ padding:13px 20px;border-radius:30px;
+ background:#ffffffbb;backdrop-filter:blur(10px);
+ font-size:12px;font-weight:800;
+}
+.scene-note{
+ position:absolute;bottom:20px;left:25px;
  font:20px 'Playfair Display';
 }
 
-/* FEATURE STRIP */
-
-.feature-strip{
- background:linear-gradient(100deg,#ff75ad,#a77aff,#ffad91);
+/* FEATURES */
+.features{
+ background:linear-gradient(100deg,#ff71a9,#9c6ae9,#ffad91);
  color:white;padding:28px 0;
 }
 .feature-grid{
  display:grid;grid-template-columns:repeat(3,1fr);
  text-align:center;
 }
-.feature-grid h3{font:24px 'Playfair Display';margin-bottom:5px}
-.feature-grid p{font-size:12px;opacity:.9}
+.feature h3{font:23px 'Playfair Display';margin-bottom:7px}
+.feature p{font-size:12px}
 
-/* COMMON SECTIONS */
-
-section:not(.hero){padding:90px 0}
-.heading{text-align:center;margin-bottom:48px}
-.heading h2{
- font:600 clamp(35px,5vw,49px) 'Playfair Display';
- margin:14px 0;
-}
-.heading p{font-size:14px;color:var(--muted);line-height:1.8}
+/* COMMON */
+section:not(.hero){padding:85px 0}
+.heading{text-align:center;margin-bottom:45px}
+.heading h2{font:600 clamp(34px,5vw,49px) 'Playfair Display';margin:14px 0}
+.heading p{color:var(--muted);font-size:14px;line-height:1.8}
 
 /* ABOUT */
-
 .about-grid{
  display:grid;grid-template-columns:1fr 1fr;
- gap:65px;align-items:center;
+ gap:60px;align-items:center;
 }
-.about-image{height:450px;border-radius:30px;overflow:hidden}
-.about-image img{width:100%;height:100%;object-fit:cover}
-.about-text h2{font:45px 'Playfair Display';margin:20px 0}
-.about-text p{color:var(--muted);font-size:14px;line-height:2;margin-bottom:20px}
+.about-visual{
+ height:410px;border-radius:30px;
+ background:linear-gradient(140deg,#f7cce1,#d7c8fa,#ffdec8);
+ position:relative;overflow:hidden;
+ display:grid;place-items:center;
+}
+.about-visual .mirror{
+ width:210px;height:270px;
+ border-radius:110px 110px 20px 20px;
+ background:linear-gradient(130deg,#fff,#e9d5e8,#c4a7c9);
+ border:10px solid #d4b07e;
+ box-shadow:0 20px 30px #8b5b9335;
+ display:grid;place-items:center;
+ font-size:65px;
+}
+.about-visual .flower{
+ position:absolute;right:30px;bottom:30px;font-size:70px;
+}
+.about-text h2{font:43px 'Playfair Display';margin:20px 0}
+.about-text p{font-size:14px;line-height:2;color:var(--muted);margin-bottom:18px}
 
 /* SERVICES */
-
-.services{
- background:linear-gradient(135deg,#fff0f7,#f4edff,#fff2e9);
-}
-.service-grid{
- display:grid;grid-template-columns:repeat(3,1fr);gap:25px;
-}
-.service-card{
- background:#ffffffc9;
- border:1px solid white;
- border-radius:23px;
- overflow:hidden;
+.services{background:linear-gradient(130deg,#fff0f7,#f1ebff,#fff0e9)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:23px}
+.card{
+ background:#ffffffc9;border:1px solid white;
+ border-radius:24px;overflow:hidden;
  box-shadow:0 8px 30px #a27bb51a;
  transition:.4s;
 }
-.service-card:hover{
- transform:translateY(-10px);
- box-shadow:0 18px 40px #a27bb53b;
+.card:hover{transform:translateY(-9px);box-shadow:0 20px 40px #a27bb53b}
+.card-art{
+ height:205px;display:grid;place-items:center;
+ font-size:80px;position:relative;overflow:hidden;
 }
-.service-card img{
- width:100%;height:225px;object-fit:cover;
- transition:.5s;
+.card-art:before{
+ content:"";position:absolute;width:160px;height:160px;
+ border-radius:50%;background:#ffffff6b;
 }
-.service-card:hover img{transform:scale(1.06)}
-.service-content{padding:23px}
-.service-content h3{font:24px 'Playfair Display';margin-bottom:10px}
-.service-content p{font-size:13px;color:var(--muted);line-height:1.8;min-height:45px}
-.service-bottom{
- display:flex;justify-content:space-between;align-items:center;
- border-top:1px solid #f0e7ef;padding-top:17px;margin-top:17px;
+.card-art span{position:relative;z-index:1;transition:.4s}
+.card:hover .card-art span{transform:scale(1.2) rotate(-7deg)}
+.pink{background:linear-gradient(135deg,#ffcfdf,#ff91bd)}
+.purple{background:linear-gradient(135deg,#e2d4ff,#aa8bff)}
+.peach{background:linear-gradient(135deg,#ffe0ce,#ffad91)}
+.blue{background:linear-gradient(135deg,#d4e8ff,#a9b9f5)}
+.yellow{background:linear-gradient(135deg,#fff1c8,#f4c98d)}
+.lavender{background:linear-gradient(135deg,#eedcff,#d2a8ef)}
+.card-content{padding:22px}
+.card h3{font:23px 'Playfair Display';margin-bottom:10px}
+.card p{font-size:13px;color:var(--muted);line-height:1.8;min-height:44px}
+.card-bottom{
+ display:flex;justify-content:space-between;
+ align-items:center;border-top:1px solid #eee5f0;
+ margin-top:17px;padding-top:17px;
 }
 .price{font-weight:800;color:#a15fd0}
 .book-small{
- border:0;background:linear-gradient(100deg,#ff75ad,#9666ec);
- color:white;padding:10px 17px;border-radius:25px;font-weight:700;
+ background:linear-gradient(100deg,var(--pink),var(--purple));
+ color:white;border:0;border-radius:20px;
+ padding:10px 16px;font-size:11px;font-weight:800;
 }
 
-/* SPECIAL BANNER */
-
+/* PROMO */
 .promo{
- margin:30px auto;
- padding:55px 30px;
- text-align:center;
- border-radius:30px;
- color:white;
- background:linear-gradient(110deg,#ff65a4,#9766ee,#ffac91);
- position:relative;
- overflow:hidden;
+ background:linear-gradient(110deg,#ff69a7,#9765e9,#ffad8b);
+ padding:55px 25px;border-radius:30px;
+ color:white;text-align:center;position:relative;overflow:hidden;
 }
-.promo:before,.promo:after{
- content:"";
- position:absolute;width:190px;height:190px;
- border:1px solid #ffffff55;border-radius:50%;
-}
-.promo:before{top:-100px;left:-40px}
-.promo:after{bottom:-120px;right:-20px}
-.promo h2{font:40px 'Playfair Display';margin-bottom:12px}
-.promo p{font-size:14px;margin-bottom:22px}
-.promo .primary{background:white;color:#a15fc7;box-shadow:none}
+.promo h2{font:39px 'Playfair Display';margin-bottom:15px}
+.promo p{font-size:14px;margin-bottom:24px}
+.promo .btn{background:white;color:#a25fc7}
 
 /* GALLERY */
-
-.gallery{
- display:grid;grid-template-columns:repeat(3,1fr);gap:17px;
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.gallery-item{
+ height:220px;border-radius:22px;
+ display:grid;place-items:center;
+ font-size:80px;overflow:hidden;
+ transition:.4s;
 }
-.gallery img{
- width:100%;height:280px;object-fit:cover;
- border-radius:20px;transition:.4s;
-}
-.gallery img:hover{transform:scale(1.035);box-shadow:0 15px 30px #0002}
+.gallery-item:hover{transform:scale(1.035)}
+.g1{background:linear-gradient(135deg,#ffcce0,#e9b0ce)}
+.g2{background:linear-gradient(135deg,#d9ccff,#a88eea)}
+.g3{background:linear-gradient(135deg,#ffe0cc,#f8ae8e)}
+.g4{background:linear-gradient(135deg,#ffdfec,#f39cbd)}
+.g5{background:linear-gradient(135deg,#d7e6fa,#a7b7e9)}
+.g6{background:linear-gradient(135deg,#f7e7c6,#eac18c)}
 
 /* BOOKING */
-
-.booking{
- background:linear-gradient(135deg,#fbe5f1,#eee7ff,#ffede3);
-}
+.booking{background:linear-gradient(135deg,#ffe8f3,#eee5ff,#ffede3)}
 .booking-grid{
  display:grid;grid-template-columns:1fr 1fr;
- gap:55px;align-items:center;
+ gap:50px;align-items:center;
 }
-.booking-info h2{font:45px 'Playfair Display';margin:20px 0}
-.booking-info p{font-size:14px;color:var(--muted);line-height:2}
+.booking-info h2{font:43px 'Playfair Display';margin:20px 0}
+.booking-info p{font-size:14px;line-height:2;color:var(--muted)}
 .booking-form{
- background:#ffffffd9;
- backdrop-filter:blur(15px);
- border:1px solid white;
- border-radius:25px;padding:35px;
+ background:#ffffffd9;backdrop-filter:blur(15px);
+ padding:32px;border:1px solid white;border-radius:25px;
  box-shadow:0 15px 45px #a27bb52b;
 }
-.booking-form h3{font:30px 'Playfair Display';margin-bottom:24px}
-.group{margin-bottom:17px}
+.booking-form h3{font:29px 'Playfair Display';margin-bottom:24px}
+.group{margin-bottom:16px}
 .group label{display:block;font-size:12px;font-weight:700;margin-bottom:8px}
 .group input,.group select{
- width:100%;padding:14px;
- border:1px solid #eaddec;border-radius:10px;
- background:#fff;font:14px 'DM Sans';outline:none;
+ width:100%;padding:14px;border:1px solid #eaddec;
+ border-radius:10px;background:white;font:14px 'DM Sans';
+ outline:none;
 }
-.group input:focus,.group select:focus{border-color:#a46de4}
+.group input:focus,.group select:focus{border-color:var(--purple)}
 .submit{
  width:100%;padding:16px;border:0;border-radius:12px;
- background:linear-gradient(100deg,#ff6ca8,#9464ed);
+ background:linear-gradient(100deg,var(--pink),var(--purple));
  color:white;font-weight:800;
 }
 
-/* TESTIMONIALS */
-
-.review-grid{
- display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
-}
+/* REVIEWS */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .review{
- padding:28px;border-radius:20px;
- background:white;box-shadow:0 8px 30px #a27bb51a;
- border:1px solid #f5eaf5;
+ background:white;border:1px solid #f4e5f0;
+ border-radius:20px;padding:27px;
+ box-shadow:0 8px 25px #a27bb51a;
 }
-.stars{color:#efa34c;letter-spacing:3px}
+.stars{color:#e9a448;letter-spacing:3px}
 .review p{font:19px/1.7 'Playfair Display';margin:18px 0}
-.review h4{font-size:12px;color:#9565ce}
+.review h4{font-size:12px;color:#a15fd0}
 
 /* FOOTER */
-
-footer{
- background:#29213b;color:white;padding:55px 0 25px;
-}
-.footer-grid{
- display:flex;justify-content:space-between;
- flex-wrap:wrap;gap:30px;padding-bottom:35px;
-}
-footer p{color:#d1c7dd;font-size:13px;line-height:2}
+footer{background:#30243d;color:white;padding:50px 0 25px}
+.footer-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:35px}
+footer p{font-size:13px;color:#d7cbe1;line-height:2}
 footer h3{margin-bottom:12px}
-.bottom{
- border-top:1px solid #51465e;padding-top:22px;
- text-align:center;font-size:12px;color:#d1c7dd;
-}
+.bottom{border-top:1px solid #51455e;padding-top:22px;text-align:center;font-size:12px;color:#d7cbe1}
 
 /* WHATSAPP */
-
 .whatsapp{
- position:fixed;bottom:23px;right:23px;
- height:58px;width:58px;border-radius:50%;
- background:#20c86b;color:white;
+ position:fixed;right:22px;bottom:22px;
+ width:58px;height:58px;border-radius:50%;
  display:grid;place-items:center;
- font-size:27px;z-index:200;
- box-shadow:0 5px 25px #0003;
+ background:#20c86b;color:white;font-size:27px;
+ z-index:200;box-shadow:0 6px 20px #0003;
 }
 
-/* REVEAL */
-
+/* ANIMATION */
 .reveal{opacity:0;transform:translateY(25px);transition:.8s}
 .reveal.show{opacity:1;transform:translateY(0)}
 
@@ -337,35 +353,35 @@ footer h3{margin-bottom:12px}
  .menu{display:block}
  .links{
   display:none;position:absolute;top:78px;left:0;width:100%;
-  background:white;flex-direction:column;padding:25px;gap:24px;
+  background:white;flex-direction:column;padding:25px;gap:25px;
  }
  .links.active{display:flex}
  .hero,.about-grid,.booking-grid{grid-template-columns:1fr}
  .hero{padding:50px 0;gap:35px}
- .hero-image{height:390px}
- .feature-grid{grid-template-columns:1fr;gap:20px}
- section:not(.hero){padding:65px 0}
- .service-grid,.gallery,.review-grid{grid-template-columns:1fr}
- .gallery img{height:320px}
- .about-image{height:350px}
+ .product-scene{min-height:380px}
+ .feature-grid{grid-template-columns:1fr;gap:22px}
+ section:not(.hero){padding:60px 0}
+ .cards,.gallery-grid,.reviews{grid-template-columns:1fr}
+ .gallery-item{height:230px}
  .booking-grid{gap:30px}
  .booking-form{padding:23px}
- .promo h2{font-size:31px}
+ .promo h2{font-size:30px}
+ .about-visual{height:340px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="background-effects">
- <div class="blob one"></div>
- <div class="blob two"></div>
- <div class="blob three"></div>
+<div class="bg-effects">
+ <div class="orb orb1"></div>
+ <div class="orb orb2"></div>
+ <div class="orb orb3"></div>
 </div>
 
 <header>
  <div class="container nav">
-  <a class="logo" href="#">Glowé<span>.</span></a>
+  <a href="#" class="logo">Glowé<span>.</span></a>
   <button class="menu" id="menu">☰</button>
   <nav class="links" id="links">
    <a href="#home">HOME</a>
@@ -373,111 +389,122 @@ footer h3{margin-bottom:12px}
    <a href="#services">SERVICES</a>
    <a href="#gallery">GALLERY</a>
    <a href="#contact">CONTACT</a>
-   <a href="#contact" class="nav-button">BOOK NOW</a>
+   <a href="#contact" class="nav-cta">BOOK NOW</a>
   </nav>
  </div>
 </header>
 
 <main>
 
+<!-- HERO -->
 <section class="container hero" id="home">
  <div class="reveal">
   <span class="tag">WELCOME TO GLOWÉ BEAUTY STUDIO</span>
-  <h1>Discover your <span class="gradient-text">beauty</span> moment.</h1>
-  <p>Experience the perfect blend of luxury, care and elegance. Discover premium beauty services in a beautiful and relaxing atmosphere.</p>
-  <a href="#services" class="primary">EXPLORE OUR SERVICES →</a>
+  <h1>Beauty is your <span class="gradient-text">own glow.</span></h1>
+  <p>Discover a colourful world of beauty, self-care and luxury. Enjoy premium products, relaxing treatments and a beautiful salon experience.</p>
+  <a href="#services" class="btn">EXPLORE SERVICES →</a>
  </div>
 
- <div class="hero-image reveal">
-  <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=1000" alt="Luxury beauty studio interior">
-  <div class="hero-badge">✨ Beauty starts here</div>
+ <div class="product-scene reveal">
+  <div class="scene-circle"></div>
+  <div class="vase">🌷</div>
+  <div class="bottle b1"></div>
+  <div class="bottle b2"></div>
+  <div class="jar"></div>
+  <div class="product-table"></div>
+  <div class="scene-label">✦ PREMIUM BEAUTY</div>
+  <div class="scene-note">Luxury in every detail.</div>
  </div>
 </section>
 
-<div class="feature-strip">
+<!-- FEATURES -->
+<div class="features">
  <div class="container feature-grid">
-  <div><h3>Premium Quality</h3><p>Carefully selected products</p></div>
-  <div><h3>Expert Services</h3><p>Professional beauty care</p></div>
-  <div><h3>Luxury Experience</h3><p>Relax and enjoy your moment</p></div>
+  <div class="feature"><h3>✦ Premium Products</h3><p>Quality beauty essentials</p></div>
+  <div class="feature"><h3>✦ Expert Care</h3><p>Professional treatments</p></div>
+  <div class="feature"><h3>✦ Luxury Experience</h3><p>Your time to shine</p></div>
  </div>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
  <div class="container about-grid">
-  <div class="about-image reveal">
-   <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=900" alt="Elegant spa interior">
+  <div class="about-visual reveal">
+   <div class="mirror">✨</div>
+   <div class="flower">🌸</div>
   </div>
   <div class="about-text reveal">
-   <span class="tag">ABOUT GLOWÉ</span>
-   <h2>Beauty is an experience, not just a service.</h2>
-   <p>Welcome to Glowé Beauty Studio. A beautiful destination designed for self-care, comfort and elegance.</p>
-   <p>We combine quality beauty products, modern treatments and a peaceful atmosphere to make every visit special.</p>
-   <a href="#contact" class="primary">KNOW MORE →</a>
+   <span class="tag">ABOUT OUR STUDIO</span>
+   <h2>Where elegance meets self-care.</h2>
+   <p>Welcome to Glowé Beauty Studio, your destination for beauty, relaxation and confidence.</p>
+   <p>We believe that every beauty experience should feel special. Our studio focuses on quality products, modern services and personalised care.</p>
+   <a href="#contact" class="btn">VISIT OUR STUDIO →</a>
   </div>
  </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services" id="services">
  <div class="container">
   <div class="heading reveal">
-   <span class="tag">OUR COLLECTION</span>
-   <h2>Services Made For You</h2>
-   <p>Explore our range of beauty and self-care services.</p>
+   <span class="tag">OUR BEAUTY MENU</span>
+   <h2>Explore Our Services</h2>
+   <p>Everything you need for your beauty and self-care routine.</p>
   </div>
 
-  <div class="service-grid">
+  <div class="cards">
 
-   <div class="service-card reveal">
-    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700" alt="Skincare products">
-    <div class="service-content">
+   <div class="card reveal">
+    <div class="card-art pink"><span>🧴</span></div>
+    <div class="card-content">
      <h3>Facial & Skincare</h3>
      <p>Refreshing facials and personalised skincare treatments.</p>
-     <div class="service-bottom"><span class="price">From ₹799</span><button class="book-small" onclick="choose('Facial & Skincare')">BOOK →</button></div>
+     <div class="card-bottom"><span class="price">From ₹799</span><button class="book-small" onclick="choose('Facial & Skincare')">BOOK →</button></div>
     </div>
    </div>
 
-   <div class="service-card reveal">
-    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700" alt="Makeup collection">
-    <div class="service-content">
+   <div class="card reveal">
+    <div class="card-art purple"><span>💄</span></div>
+    <div class="card-content">
      <h3>Bridal Makeup</h3>
-     <p>Premium makeup packages for your special occasions.</p>
-     <div class="service-bottom"><span class="price">From ₹4,999</span><button class="book-small" onclick="choose('Bridal Makeup')">BOOK →</button></div>
+     <p>Premium makeup packages for special occasions.</p>
+     <div class="card-bottom"><span class="price">From ₹4,999</span><button class="book-small" onclick="choose('Bridal Makeup')">BOOK →</button></div>
     </div>
    </div>
 
-   <div class="service-card reveal">
-    <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=700" alt="Salon interior">
-    <div class="service-content">
+   <div class="card reveal">
+    <div class="card-art peach"><span>💇</span></div>
+    <div class="card-content">
      <h3>Hair Styling</h3>
-     <p>Professional hair care and modern styling services.</p>
-     <div class="service-bottom"><span class="price">From ₹499</span><button class="book-small" onclick="choose('Hair Styling')">BOOK →</button></div>
+     <p>Haircuts, styling and professional hair care.</p>
+     <div class="card-bottom"><span class="price">From ₹499</span><button class="book-small" onclick="choose('Hair Styling')">BOOK →</button></div>
     </div>
    </div>
 
-   <div class="service-card reveal">
-    <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=700" alt="Nail polish products">
-    <div class="service-content">
+   <div class="card reveal">
+    <div class="card-art blue"><span>💅</span></div>
+    <div class="card-content">
      <h3>Nail Art</h3>
-     <p>Creative nail designs and professional nail care.</p>
-     <div class="service-bottom"><span class="price">From ₹399</span><button class="book-small" onclick="choose('Nail Art')">BOOK →</button></div>
+     <p>Beautiful nail designs and premium nail care.</p>
+     <div class="card-bottom"><span class="price">From ₹399</span><button class="book-small" onclick="choose('Nail Art')">BOOK →</button></div>
     </div>
    </div>
 
-   <div class="service-card reveal">
-    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700" alt="Spa room">
-    <div class="service-content">
+   <div class="card reveal">
+    <div class="card-art yellow"><span>🕯️</span></div>
+    <div class="card-content">
      <h3>Spa & Relaxation</h3>
-     <p>Peaceful spa experiences and relaxing treatments.</p>
-     <div class="service-bottom"><span class="price">From ₹999</span><button class="book-small" onclick="choose('Spa & Relaxation')">BOOK →</button></div>
+     <p>Relaxing treatments in a peaceful environment.</p>
+     <div class="card-bottom"><span class="price">From ₹999</span><button class="book-small" onclick="choose('Spa & Relaxation')">BOOK →</button></div>
     </div>
    </div>
 
-   <div class="service-card reveal">
-    <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=700" alt="Beauty product collection">
-    <div class="service-content">
+   <div class="card reveal">
+    <div class="card-art lavender"><span>🪞</span></div>
+    <div class="card-content">
      <h3>Beauty & Grooming</h3>
-     <p>Everyday grooming and premium beauty care.</p>
-     <div class="service-bottom"><span class="price">From ₹299</span><button class="book-small" onclick="choose('Beauty & Grooming')">BOOK →</button></div>
+     <p>Everyday grooming and beauty care services.</p>
+     <div class="card-bottom"><span class="price">From ₹299</span><button class="book-small" onclick="choose('Beauty & Grooming')">BOOK →</button></div>
     </div>
    </div>
 
@@ -485,40 +512,44 @@ footer h3{margin-bottom:12px}
  </div>
 </section>
 
+<!-- PROMO -->
 <section>
  <div class="container">
   <div class="promo reveal">
-   <h2>A Little Self-Care Goes A Long Way ✨</h2>
-   <p>Make time for yourself. Your beauty experience awaits.</p>
-   <a href="#contact" class="primary">BOOK YOUR VISIT</a>
+   <h2>✨ Make Time For Yourself ✨</h2>
+   <p>A little self-care can make every day brighter.</p>
+   <a href="#contact" class="btn">BOOK YOUR APPOINTMENT</a>
   </div>
  </div>
 </section>
 
+<!-- GALLERY -->
 <section id="gallery">
  <div class="container">
   <div class="heading reveal">
    <span class="tag">OUR GALLERY</span>
    <h2>Beauty In Every Detail</h2>
-   <p>A glimpse of our products, spaces and beauty essentials.</p>
+   <p>A colourful collection of beauty essentials and salon inspiration.</p>
   </div>
-  <div class="gallery reveal">
-   <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=700" alt="Salon">
-   <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700" alt="Skincare">
-   <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700" alt="Makeup">
-   <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=700" alt="Nail polish">
-   <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=700" alt="Spa">
-   <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700" alt="Spa interior">
+
+  <div class="gallery-grid reveal">
+   <div class="gallery-item g1">🧴</div>
+   <div class="gallery-item g2">💄</div>
+   <div class="gallery-item g3">🌷</div>
+   <div class="gallery-item g4">💅</div>
+   <div class="gallery-item g5">🪞</div>
+   <div class="gallery-item g6">✨</div>
   </div>
  </div>
 </section>
 
+<!-- BOOKING -->
 <section class="booking" id="contact">
  <div class="container booking-grid">
   <div class="booking-info reveal">
    <span class="tag">LET'S CONNECT</span>
-   <h2>Your beauty appointment starts here.</h2>
-   <p>Book your preferred service and send us your appointment request through WhatsApp.</p>
+   <h2>Your beauty moment is waiting.</h2>
+   <p>Choose your favourite service and book an appointment. We look forward to welcoming you.</p>
    <br>
    <p>📍 Location: Your City, Tamil Nadu</p>
    <p>🕒 Opening: 10 AM – 8 PM</p>
@@ -533,13 +564,13 @@ footer h3{margin-bottom:12px}
      <input type="text" id="name" placeholder="Enter your name" required>
     </div>
     <div class="group">
-     <label>Mobile Number</label>
+     <label>Phone Number</label>
      <input type="tel" id="phone" maxlength="10" placeholder="10 digit number" required>
     </div>
     <div class="group">
-     <label>Choose Service</label>
+     <label>Select Service</label>
      <select id="service" required>
-      <option value="">Select a service</option>
+      <option value="">Choose a service</option>
       <option>Facial & Skincare</option>
       <option>Bridal Makeup</option>
       <option>Hair Styling</option>
@@ -552,27 +583,28 @@ footer h3{margin-bottom:12px}
      <label>Appointment Date</label>
      <input type="date" id="date" required>
     </div>
-    <button class="submit" type="submit">CONFIRM VIA WHATSAPP →</button>
+    <button class="submit" type="submit">SEND BOOKING REQUEST →</button>
    </form>
   </div>
  </div>
 </section>
 
+<!-- REVIEWS -->
 <section>
  <div class="container">
   <div class="heading reveal">
    <span class="tag">CLIENT LOVE</span>
-   <h2>Beautiful Words</h2>
+   <h2>Happy Experiences</h2>
   </div>
-  <div class="review-grid">
+  <div class="reviews">
    <div class="review reveal">
     <div class="stars">★★★★★</div>
-    <p>"A lovely atmosphere and a wonderful beauty experience."</p>
+    <p>"Beautiful atmosphere and a wonderful experience."</p>
     <h4>Happy Client</h4>
    </div>
    <div class="review reveal">
     <div class="stars">★★★★★</div>
-    <p>"Professional service and a beautiful salon experience."</p>
+    <p>"Professional services and a lovely salon."</p>
     <h4>Happy Client</h4>
    </div>
    <div class="review reveal">
@@ -586,6 +618,7 @@ footer h3{margin-bottom:12px}
 
 </main>
 
+<!-- FOOTER -->
 <footer>
  <div class="container">
   <div class="footer-grid">
@@ -594,7 +627,7 @@ footer h3{margin-bottom:12px}
     <p>Beauty • Elegance • Confidence</p>
    </div>
    <div>
-    <h3>Explore</h3>
+    <h3>Quick Links</h3>
     <p><a href="#home">Home</a></p>
     <p><a href="#about">About</a></p>
     <p><a href="#services">Services</a></p>
@@ -610,13 +643,13 @@ footer h3{margin-bottom:12px}
  </div>
 </footer>
 
-<a href="#" class="whatsapp" id="whatsapp">✆</a>
+<a class="whatsapp" id="whatsapp" href="#">✆</a>
 
 <script>
-// Change to actual salon WhatsApp number
+// Replace with actual salon WhatsApp number
 const whatsappNumber = "91XXXXXXXXXX";
 
-// Mobile menu
+// Mobile navigation
 document.getElementById("menu").onclick=()=>{
  document.getElementById("links").classList.toggle("active");
 };
@@ -627,17 +660,17 @@ document.querySelectorAll(".links a").forEach(link=>{
  });
 });
 
-// Date restriction
+// Appointment date restriction
 const dateInput=document.getElementById("date");
 dateInput.min=new Date().toLocaleDateString("en-CA");
 
-// Select service
-function choose(service){
- document.getElementById("service").value=service;
+// Service booking shortcut
+function choose(serviceName){
+ document.getElementById("service").value=serviceName;
  document.getElementById("contact").scrollIntoView({behavior:"smooth"});
 }
 
-// Booking
+// WhatsApp booking
 document.getElementById("bookingForm").addEventListener("submit",function(e){
  e.preventDefault();
 
@@ -647,21 +680,19 @@ document.getElementById("bookingForm").addEventListener("submit",function(e){
  const date=document.getElementById("date").value;
 
  if(!/^[0-9]{10}$/.test(phone)){
-  alert("Please enter a valid 10 digit mobile number.");
+  alert("Please enter a valid 10-digit phone number.");
   return;
  }
 
- if(!/^[0-9]{10}$/.test(whatsappNumber.replace(/^91/,""))){
-  alert("Salon WhatsApp number is not configured yet.");
+ if(!/^91[0-9]{10}$/.test(whatsappNumber)){
+  alert("Please configure the salon WhatsApp number in the code.");
   return;
  }
 
- const message=`Hello! I would like to book an appointment.
-
-Name: ${name}
-Phone: ${phone}
-Service: ${service}
-Date: ${date}`;
+ const message=
+ `Hello! I would like to book an appointment.\n\n`+
+ `Name: ${name}\nPhone: ${phone}\n`+
+ `Service: ${service}\nDate: ${date}`;
 
  window.open(
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
@@ -669,14 +700,14 @@ Date: ${date}`;
  );
 });
 
-// WhatsApp button
+// Floating WhatsApp
 document.getElementById("whatsapp").href=
  `https://wa.me/${whatsappNumber}`;
 
-// Year
+// Footer year
 document.getElementById("year").textContent=new Date().getFullYear();
 
-// Scroll animations
+// Scroll reveal
 const observer=new IntersectionObserver(entries=>{
  entries.forEach(entry=>{
   if(entry.isIntersecting){
