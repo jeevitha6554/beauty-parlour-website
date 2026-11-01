@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÉLAN | Luxury Beauty Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:#faf6f0;
+  --rose:#ae7771;
+  --gold:#b69a73;
+  --dark:#292320;
+  --muted:#817772;
+  --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark)}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1180px;margin:auto}
+
+/* NAVIGATION */
+header{background:#faf6f0ed;backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;border-bottom:1px solid #e9dfd5}
+.nav{height:80px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 30px 'Playfair Display';letter-spacing:3px}
+.logo span{color:var(--rose)}
+.links{display:flex;gap:30px;align-items:center}
+.links a{font-size:12px;font-weight:700;letter-spacing:1px}
+.links a:hover{color:var(--rose)}
+.btn{background:var(--dark);color:white;padding:15px 25px;border:0;display:inline-block;font-size:12px;letter-spacing:1px;cursor:pointer;transition:.3s}
+.btn:hover{background:var(--rose);transform:translateY(-3px)}
+.menu{display:none;background:none;border:0;font-size:26px}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px;padding:75px 0}
+.tag{color:var(--rose);font-size:11px;font-weight:700;letter-spacing:4px}
+.hero h1{font:500 clamp(45px,6vw,76px)/1.13 'Playfair Display';margin:25px 0}
+.hero h1 em{color:var(--rose)}
+.hero p{font-size:15px;line-height:1.9;color:var(--muted);margin-bottom:30px;max-width:480px}
+.hero-img{height:540px;position:relative}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.img-caption{position:absolute;bottom:20px;left:-20px;background:white;padding:20px 25px;font:20px 'Playfair Display';box-shadow:0 8px 25px #0002}
+
+/* FEATURES */
+.features{background:#eee4db;padding:30px 0}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.feature{padding:18px;border-right:1px solid #d7c7bc}
+.feature:last-child{border:0}
+.feature h3{font:23px 'Playfair Display';margin-bottom:8px}
+.feature p{font-size:12px;color:var(--muted)}
+
+/* GENERAL SECTIONS */
+section:not(.hero){padding:90px 0}
+.heading{text-align:center;margin-bottom:48px}
+.heading h2{font:500 clamp(34px,5vw,48px) 'Playfair Display';margin:15px 0}
+.heading p{font-size:14px;color:var(--muted);line-height:1.8}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-img{height:460px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-text h2{font:45px 'Playfair Display';margin:18px 0}
+.about-text p{font-size:14px;color:var(--muted);line-height:2;margin-bottom:18px}
+
+/* SERVICES */
+.services{background:#f0e8e1}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.card{background:white;overflow:hidden;transition:.35s}
+.card:hover{transform:translateY(-8px);box-shadow:0 15px 35px #0002}
+.card img{width:100%;height:240px;object-fit:cover;transition:.5s}
+.card:hover img{transform:scale(1.04)}
+.card-content{padding:23px}
+.card h3{font:23px 'Playfair Display';margin-bottom:10px}
+.card p{font-size:13px;line-height:1.8;color:var(--muted);min-height:45px}
+.card-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #eee;padding-top:17px;margin-top:18px}
+.price{font-weight:700;color:var(--rose)}
+.card-bottom button{border:0;background:none;font-weight:700;cursor:pointer}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.gallery img{width:100%;height:300px;object-fit:cover;transition:.4s}
+.gallery img:hover{transform:scale(1.03)}
+
+/* BOOKING */
+.booking{background:var(--dark);color:white}
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.booking-info h2{font:45px 'Playfair Display';margin:20px 0}
+.booking-info p{color:#c9bbb3;font-size:14px;line-height:2}
+.booking-form{background:white;color:var(--dark);padding:35px}
+.booking-form h3{font:30px 'Playfair Display';margin-bottom:25px}
+.group{margin-bottom:18px}
+.group label{display:block;font-size:12px;font-weight:700;margin-bottom:8px}
+.group input,.group select{width:100%;padding:14px;border:1px solid #e6ded8;background:#fdfbf9;font:14px 'DM Sans';outline:none}
+.group input:focus,.group select:focus{border-color:var(--rose)}
+.booking-form button{width:100%;padding:16px;background:var(--rose);color:white;border:0;font-weight:700;cursor:pointer}
+.booking-form button:hover{background:var(--dark)}
+
+/* REVIEWS */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review{padding:30px;background:white;border:1px solid #eee5df}
+.stars{color:var(--gold);letter-spacing:3px}
+.review p{font:19px/1.7 'Playfair Display';margin:18px 0}
+.review h4{font-size:12px}
+
+/* FOOTER */
+footer{background:#211c1a;color:white;padding:55px 0 25px}
+.footer-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:35px}
+footer p{font-size:13px;color:#b8aaa2;line-height:2}
+footer h3{margin-bottom:12px}
+.bottom{border-top:1px solid #443a35;padding-top:22px;text-align:center;color:#b8aaa2;font-size:12px}
+
+/* WHATSAPP */
+.whatsapp{position:fixed;bottom:23px;right:23px;width:57px;height:57px;border-radius:50%;background:#25D366;color:white;display:grid;place-items:center;font-size:28px;z-index:100;box-shadow:0 5px 20px #0003}
+
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+ .menu{display:block}
+ .links{display:none;position:absolute;top:80px;left:0;width:100%;background:var(--cream);padding:25px;flex-direction:column;gap:25px}
+ .links.active{display:flex}
+ .hero,.about-grid,.booking-grid{grid-template-columns:1fr}
+ .hero{padding:50px 0;gap:35px}
+ .hero-img{height:380px}
+ .img-caption{left:10px}
+ .feature-grid{grid-template-columns:1fr}
+ .feature{border-right:0;border-bottom:1px solid #d7c7bc}
+ .cards,.gallery,.reviews{grid-template-columns:1fr}
+ .gallery img{height:330px}
+ section:not(.hero){padding:65px 0}
+ .about-img{height:350px}
+ .booking-grid{gap:35px}
+ .booking-form{padding:23px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="container nav">
+  <a href="#" class="logo">ÉLAN<span>.</span></a>
+  <button class="menu" id="menu">☰</button>
+  <nav class="links" id="links">
+   <a href="#home">HOME</a>
+   <a href="#about">ABOUT</a>
+   <a href="#services">SERVICES</a>
+   <a href="#gallery">GALLERY</a>
+   <a href="#contact">CONTACT</a>
+   <a href="#contact" class="btn">BOOK NOW</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="container hero" id="home">
+ <div class="reveal">
+  <span class="tag">WELCOME TO ÉLAN BEAUTY STUDIO</span>
+  <h1>Beauty begins with <em>self-care.</em></h1>
+  <p>Discover a luxurious beauty experience. Professional treatments, premium products and a relaxing atmosphere designed around your beauty and comfort.</p>
+  <a href="#services" class="btn">EXPLORE SERVICES →</a>
+ </div>
+
+ <div class="hero-img reveal">
+  <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=1000" alt="Luxury salon interior">
+  <div class="img-caption">Elegance in every detail.</div>
+ </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+ <div class="container feature-grid">
+  <div class="feature"><h3>Premium Products</h3><p>Carefully selected beauty products</p></div>
+  <div class="feature"><h3>Expert Care</h3><p>Professional beauty services</p></div>
+  <div class="feature"><h3>Relaxing Space</h3><p>Your personal self-care destination</p></div>
+ </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+ <div class="container about-grid">
+  <div class="about-img reveal">
+   <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=900" alt="Luxury spa interior">
+  </div>
+  <div class="about-text reveal">
+   <span class="tag">ABOUT OUR STUDIO</span>
+   <h2>A little luxury. A lot of care.</h2>
+   <p>At ÉLAN Beauty Studio, we believe beauty is an experience. Our studio brings together premium beauty products, thoughtful treatments and a peaceful atmosphere.</p>
+   <p>From everyday grooming to special occasion beauty services, we focus on quality, comfort and personalised care.</p>
+   <a href="#contact" class="btn">CONTACT US →</a>
+  </div>
+ </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+ <div class="container">
+  <div class="heading reveal">
+   <span class="tag">OUR SERVICES</span>
+   <h2>Beauty & Self-Care</h2>
+   <p>Explore our professional beauty services.</p>
+  </div>
+
+  <div class="cards">
+
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700" alt="Skincare products">
+    <div class="card-content">
+     <h3>Facial & Skincare</h3>
+     <p>Personalised skincare treatments and refreshing facials.</p>
+     <div class="card-bottom"><span class="price">From ₹799</span><button onclick="choose('Facial & Skincare')">BOOK →</button></div>
+    </div>
+   </div>
+
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700" alt="Makeup products">
+    <div class="card-content">
+     <h3>Bridal Makeup</h3>
+     <p>Premium makeup packages for your special occasions.</p>
+     <div class="card-bottom"><span class="price">From ₹4,999</span><button onclick="choose('Bridal Makeup')">BOOK →</button></div>
+    </div>
+   </div>
+
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700" alt="Salon styling station">
+    <div class="card-content">
+     <h3>Hair Styling</h3>
+     <p>Haircuts, styling and professional hair treatments.</p>
+     <div class="card-bottom"><span class="price">From ₹499</span><button onclick="choose('Hair Styling')">BOOK →</button></div>
+    </div>
+   </div>
+
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=700" alt="Nail polish collection">
+    <div class="card-content">
+     <h3>Nail Art</h3>
+     <p>Creative nail designs and premium nail care.</p>
+     <div class="card-bottom"><span class="price">From ₹399</span><button onclick="choose('Nail Art')">BOOK →</button></div>
+    </div>
+   </div>
+
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=700" alt="Spa interior">
+    <div class="card-content">
+     <h3>Spa & Relaxation</h3>
+     <p>Relaxing spa experiences in a peaceful environment.</p>
+     <div class="card-bottom"><span class="price">From ₹999</span><button onclick="choose('Spa & Relaxation')">BOOK →</button></div>
+    </div>
+   </div>
+
+   <div class="card reveal">
+    <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=700" alt="Beauty products">
+    <div class="card-content">
+     <h3>Beauty & Grooming</h3>
+     <p>Everyday grooming and beauty care services.</p>
+     <div class="card-bottom"><span class="price">From ₹299</span><button onclick="choose('Beauty & Grooming')">BOOK →</button></div>
+    </div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+ <div class="container">
+  <div class="heading reveal">
+   <span class="tag">OUR GALLERY</span>
+   <h2>Inside Our Beauty World</h2>
+   <p>Beautiful spaces, premium products and elegant details.</p>
+  </div>
+
+  <div class="gallery reveal">
+   <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=700" alt="Salon interior">
+   <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=700" alt="Skincare collection">
+   <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=700" alt="Makeup products">
+   <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=700" alt="Nail polish">
+   <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=700" alt="Spa room">
+   <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=700" alt="Beauty products">
+  </div>
+ </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="contact">
+ <div class="container booking-grid">
+  <div class="booking-info reveal">
+   <span class="tag">BOOK YOUR VISIT</span>
+   <h2>Your self-care moment awaits.</h2>
+   <p>Ready for a beautiful experience? Send us your appointment request through WhatsApp.</p>
+   <br>
+   <p>📍 Location: Your City, Tamil Nadu</p>
+   <p>🕒 Opening: 10 AM – 8 PM</p>
+   <p>📅 Monday – Sunday</p>
+  </div>
+
+  <div class="booking-form reveal">
+   <h3>Make An Appointment</h3>
+   <form id="bookingForm">
+    <div class="group">
+     <label>Full Name</label>
+     <input id="name" type="text" placeholder="Your name" required>
+    </div>
+    <div class="group">
+     <label>Phone Number</label>
+     <input id="phone" type="tel" placeholder="10 digit mobile number" maxlength="10" required>
+    </div>
+    <div class="group">
+     <label>Select Service</label>
+     <select id="service" required>
+      <option value="">Choose service</option>
+      <option>Facial & Skincare</option>
+      <option>Bridal Makeup</option>
+      <option>Hair Styling</option>
+      <option>Nail Art</option>
+      <option>Spa & Relaxation</option>
+      <option>Beauty & Grooming</option>
+     </select>
+    </div>
+    <div class="group">
+     <label>Appointment Date</label>
+     <input id="date" type="date" required>
+    </div>
+    <button type="submit">SEND BOOKING REQUEST →</button>
+   </form>
+  </div>
+ </div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+ <div class="container">
+  <div class="heading reveal">
+   <span class="tag">CLIENT LOVE</span>
+   <h2>Client Experiences</h2>
+  </div>
+  <div class="reviews">
+   <div class="review reveal"><div class="stars">★★★★★</div><p>"A lovely atmosphere and a wonderful beauty experience."</p><h4>Happy Client</h4></div>
+   <div class="review reveal"><div class="stars">★★★★★</div><p>"Professional service and beautiful salon interiors."</p><h4>Happy Client</h4></div>
+   <div class="review reveal"><div class="stars">★★★★★</div><p>"Premium experience with great attention to detail."</p><h4>Happy Client</h4></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="logo">ÉLAN<span>.</span></div><p>Beauty. Elegance. Confidence.</p></div>
+   <div><h3>Quick Links</h3><p><a href="#home">Home</a></p><p><a href="#about">About</a></p><p><a href="#services">Services</a></p></div>
+   <div><h3>Contact</h3><p>Phone: +91 XXXXXXXXXX</p><p>Email: hello@example.com</p><p>Instagram: @elanbeautystudio</p></div>
+  </div>
+  <div class="bottom">© <span id="year"></span> ÉLAN Beauty Studio. All Rights Reserved.</div>
+ </div>
+</footer>
+
+<a href="#" class="whatsapp" id="whatsapp">✆</a>
+
+<script>
+// Replace with actual salon WhatsApp number
+const whatsappNumber = "91XXXXXXXXXX";
+
+// Mobile menu
+document.getElementById("menu").onclick = () => {
+ document.getElementById("links").classList.toggle("active");
+};
+
+document.querySelectorAll(".links a").forEach(a => {
+ a.onclick = () => document.getElementById("links").classList.remove("active");
+});
+
+// Minimum appointment date
+const dateInput = document.getElementById("date");
+dateInput.min = new Date().toLocaleDateString("en-CA");
+
+// Select service from service cards
+function choose(serviceName) {
+ document.getElementById("service").value = serviceName;
+ document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+// Booking form
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+ e.preventDefault();
+
+ const name = document.getElementById("name").value.trim();
+ const phone = document.getElementById("phone").value.trim();
+ const service = document.getElementById("service").value;
+ const date = document.getElementById("date").value;
+
+ if (!/^[0-9]{10}$/.test(phone)) {
+  alert("Enter a valid 10-digit phone number");
+  return;
+ }
+
+ const message = `Hello! I want to book an appointment.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0ADate: ${encodeURIComponent(date)}`;
+
+ window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+});
+
+// Floating WhatsApp
+document.getElementById("whatsapp").href = `https://wa.me/${whatsappNumber}`;
+
+// Year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Reveal animations
+const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+  if(entry.isIntersecting) entry.target.classList.add("show");
+ });
+},{threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
